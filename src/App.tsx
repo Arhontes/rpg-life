@@ -1,11 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 function App() {
-  return (
-    <div>
-      dev
-    </div>
-  );
+    useEffect(() => {}, []);
+    return <div>dev</div>;
 }
 
 export default App;
