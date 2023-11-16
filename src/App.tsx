@@ -1,8 +1,12 @@
-import React, { useEffect } from 'react';
-
+import cn from 'classnames'
+import s from './App.module.css'
+import { CircleButton } from './features/calculator'
 function App() {
-    useEffect(() => {}, []);
-    return <div>dev</div>;
+    return (
+        <div className={cn(s.app)}>
+            <CircleButton />
+        </div>
+    )
 }
 
-export default App;
+export default App
