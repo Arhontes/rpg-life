@@ -1,31 +1,13 @@
+import CalculateIcon from '@mui/icons-material/Calculate'
+import CatchingPokemonIcon from '@mui/icons-material/CatchingPokemon'
+import EditNoteIcon from '@mui/icons-material/EditNote'
+import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered'
+import LocalLibraryIcon from '@mui/icons-material/LocalLibrary'
+import cn from 'classnames'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
-import blackhole from '../../assets/pngwing.com.png'
-
-import s from './style.module.css'
-const SomeSvg = () => {
-    const icon = {
-        hidden: {
-            pathLength: 0,
-            fill: 'rgba(255, 255, 255, 0)',
-        },
-        visible: {
-            pathLength: 1,
-            fill: 'rgba(255, 255, 255, 1)',
-        },
-    }
-
-    return (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-            <motion.path
-                d="M0 100V0l50 50 50-50v100L75 75l-25 25-25-25z"
-                variants={icon}
-                initial="hidden"
-                animate="visible"
-            />
-        </svg>
-    )
-}
+import { useNavigate } from 'react-router-dom'
+import s from './style.module.scss'
 
 export const CircleButton = () => {
     const [isClicked, setIsClicked] = useState(false)
@@ -35,6 +17,10 @@ export const CircleButton = () => {
     }
 
     const centerItemSize = 120
+    const navigate = useNavigate()
+    const go = (to: string) => {
+        navigate(to)
+    }
     return (
         <div
             style={{
@@ -43,12 +29,10 @@ export const CircleButton = () => {
                 alignItems: 'center',
                 height: '100%',
                 width: '100%',
-                background: '#202124',
+                background: '#f7f7f7',
             }}
         >
             <div
-                onClick={handleCircleClick}
-                className={s.justRotate}
                 style={{
                     position: 'relative',
                     width: '100%',
@@ -71,87 +55,60 @@ export const CircleButton = () => {
                         justifyContent: 'center',
                     }}
                 >
-                    <motion.img
-                        className={s.rotate}
-                        src={blackhole}
-                        style={{
-                            zIndex: 9999,
-                            width: 200,
-                            height: 200,
-                            borderRadius: '50%',
-                            cursor: 'pointer',
-                            position: 'absolute',
-                            top: '50%',
-                            left: '50%',
-                        }}
-                    />
+                    <div
+                        onClick={handleCircleClick}
+                        className={cn(s.startButton, { [s.clicked]: isClicked })}
+                    >
+                        <CatchingPokemonIcon />
+                    </div>
 
                     <AnimatePresence>
                         {isClicked && (
                             <>
                                 <motion.div
-                                    initial={{ opacity: 1, x: 0, zIndex: 0 }}
+                                    onClick={() => go('/calculator')}
+                                    initial={{ opacity: 0, x: 0, zIndex: 0 }}
                                     animate={{ opacity: 1, x: isClicked ? centerItemSize : 0 }}
-                                    exit={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.8 }}
-                                    style={{
-                                        zIndex: 0,
-                                        scale: 0.8,
-                                        borderRadius: '50%',
-                                        position: 'absolute',
-                                        cursor: 'pointer',
-                                    }}
+                                    exit={{ opacity: 0, x: 0 }}
+                                    transition={{ duration: 0.3 }}
+                                    className={cn(s.menuItem)}
                                 >
-                                    <h1>А</h1>
+                                    <div>
+                                        <CalculateIcon />
+                                    </div>
                                 </motion.div>
                                 <motion.div
-                                    initial={{ opacity: 1, x: 0, zIndex: 0 }}
+                                    initial={{ opacity: 0, x: 0, zIndex: 0 }}
                                     animate={{ opacity: 1, x: isClicked ? -centerItemSize : 0 }}
-                                    exit={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.8 }}
-                                    style={{
-                                        zIndex: 0,
-                                        scale: 0.8,
-
-                                        borderRadius: '50%',
-
-                                        position: 'absolute',
-                                        cursor: 'pointer',
-                                    }}
+                                    exit={{ opacity: 0, x: 0 }}
+                                    transition={{ duration: 0.7 }}
+                                    className={cn(s.menuItem)}
                                 >
-                                    <h1>Я</h1>
+                                    <div>
+                                        <EditNoteIcon />
+                                    </div>
                                 </motion.div>
                                 <motion.div
-                                    initial={{ opacity: 1, x: 0, y: 0, zIndex: 0 }}
+                                    initial={{ opacity: 0, x: 0, y: 0, zIndex: 0 }}
                                     animate={{ opacity: 1, y: isClicked ? centerItemSize : 0 }}
-                                    exit={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.8 }}
-                                    style={{
-                                        zIndex: 0,
-                                        scale: 0.8,
-
-                                        borderRadius: '50%',
-                                        position: 'absolute',
-                                        cursor: 'pointer',
-                                    }}
+                                    exit={{ opacity: 0, y: 0 }}
+                                    transition={{ duration: 0.5 }}
+                                    className={cn(s.menuItem)}
                                 >
-                                    <h1>Д</h1>
+                                    <div>
+                                        <FormatListNumberedIcon />
+                                    </div>
                                 </motion.div>
                                 <motion.div
-                                    initial={{ opacity: 1, x: 0, y: 0, zIndex: 0 }}
+                                    initial={{ opacity: 0, x: 0, y: 0, zIndex: 0 }}
                                     animate={{ opacity: 1, y: isClicked ? -centerItemSize : 0 }}
-                                    exit={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.8 }}
-                                    style={{
-                                        zIndex: 0,
-                                        scale: 0.8,
-
-                                        borderRadius: '50%',
-                                        position: 'absolute',
-                                        cursor: 'pointer',
-                                    }}
+                                    exit={{ opacity: 0, y: 0 }}
+                                    transition={{ duration: 0.9 }}
+                                    className={cn(s.menuItem)}
                                 >
-                                    <h1>Н</h1>
+                                    <div>
+                                        <LocalLibraryIcon />
+                                    </div>
                                 </motion.div>
                             </>
                         )}
