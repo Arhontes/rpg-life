@@ -1,6 +1,6 @@
 import cn from 'classnames'
+import { CircleButton } from '../calculator'
 import s from './App.module.css'
-import { CircleButton } from './features/calculator'
 function App() {
     return (
         <div className={cn(s.app)}>

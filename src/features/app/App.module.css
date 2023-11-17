@@ -5,6 +5,7 @@
     max-height: 100vh;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
 }
 
 body {
@@ -13,4 +14,11 @@ body {
 h1 {
     font-size: 60px;
     color: yellow;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
