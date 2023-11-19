@@ -9,7 +9,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import s from './style.module.scss'
 
-export const CircleButton = () => {
+export const CentralNavigaton = () => {
     const [isClicked, setIsClicked] = useState(false)
 
     const handleCircleClick = () => {

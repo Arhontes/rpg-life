@@ -1,0 +1,32 @@
+.startButton {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #f5f5f5;
+    text-align: center;
+
+    box-shadow:
+        0px 3px 8px #aaa,
+        inset 0px 2px 3px #fff;
+    border: solid 1px transparent;
+
+    svg {
+        fill: inherit;
+    }
+
+    &:hover {
+        text-decoration: none;
+        background: #fff;
+    }
+}
+
+.clicked {
+    box-shadow:
+        0px 3px 4px #aaa inset,
+        0px 2px 3px #fff;
+}
