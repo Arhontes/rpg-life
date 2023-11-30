@@ -22,8 +22,8 @@ jobs:
     - name: Deploy to Server
       uses: appleboy/ssh-action@v0.1.9
       with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
+        host: 195.93.253.24
+        username: root
         key: ${{ secrets.PASSWORD }}
         script: |
           sudo cp -r /root/rpg-life/build/* /var/www/build
