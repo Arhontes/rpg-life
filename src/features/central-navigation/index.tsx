@@ -77,7 +77,7 @@ export const CentralNavigaton = () => {
                                         <CalculateIcon />
                                     </div>
                                 </motion.div>
-                                <motion.div
+                                {/* <motion.div
                                     initial={{ opacity: 0, x: 0, zIndex: 0 }}
                                     animate={{ opacity: 1, x: isClicked ? -centerItemSize : 0 }}
                                     exit={{ opacity: 0, x: 0 }}
@@ -87,7 +87,7 @@ export const CentralNavigaton = () => {
                                     <div>
                                         <EditNoteIcon />
                                     </div>
-                                </motion.div>
+                                </motion.div> */}
                                 <motion.div
                                     initial={{ opacity: 0, x: 0, y: 0, zIndex: 0 }}
                                     animate={{ opacity: 1, y: isClicked ? centerItemSize : 0 }}
