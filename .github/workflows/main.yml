@@ -6,7 +6,7 @@ on:
       - master  # Change this to your main branch name
 
 env:
-  DEPLOY_PATH: /var/www/build
+  DEPLOY_PATH: /var/www
   BUILD_SCRIPT: npm run build
   BUILD_SCRIPT_OUTPUT: build
 
