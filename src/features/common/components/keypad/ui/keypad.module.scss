@@ -1,8 +1,14 @@
 .startButton {
-    width: 50px;
+    width: 30%;
     height: 50px;
     cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
     display: flex;
     justify-content: center;
     align-items: center;

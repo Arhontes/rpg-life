@@ -23,19 +23,29 @@ const keypadNumbers: Array<KeypadValueType> = [
     { action: 'number', value: 7, id: '7' },
     { action: 'number', value: 8, id: '8' },
     { action: 'number', value: 9, id: '9' },
-    { action: 'submit', value: <DoneIcon />, id: 'done' },
+    { action: 'submit', value: <DoneIcon style={{ userSelect: 'none' }} />, id: 'done' },
     { action: 'number', value: 0, id: '0' },
-    { action: 'submit', value: <BackspaceIcon />, id: 'delete' },
+    { action: 'submit', value: <BackspaceIcon style={{ userSelect: 'none' }} />, id: 'delete' },
 ]
 export const Keypad = () => {
     return (
         <div
+            onClick={(e) => e.preventDefault()}
+            onTouchStart={(e) => e.preventDefault()}
+            onTouchEnd={(e) => e.preventDefault()}
+            onTouchMove={(e) => e.preventDefault()}
+            onTouchCancel={(e) => e.preventDefault()}
+            onTouchCancelCapture={(e) => e.preventDefault()}
+            onTouchEndCapture={(e) => e.preventDefault()}
+            onTouchMoveCapture={(e) => e.preventDefault()}
+            onTouchStartCapture={(e) => e.preventDefault()}
             style={{
                 display: 'flex',
                 flexWrap: 'wrap',
                 gap: '8px',
-                maxWidth: '200px',
+                maxWidth: '100%',
                 justifyContent: 'center',
+                userSelect: 'none',
             }}
         >
             {keypadNumbers.map((el) => (
