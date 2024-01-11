@@ -23,7 +23,7 @@ jobs:
               with:
                   username: ${{ secrets.DOCKERHUB_USER }}
                   password: ${{ secrets.DOCKERHUB_PASS }}
-            
+
             - name: Set up Docker Buildx
               uses: docker/setup-buildx-action@v3.0.0
 
@@ -44,4 +44,4 @@ jobs:
                   port: 22
                   script: |
                       docker pull arhontes/achieves:latest
-                      docker run -d -p 8080:80 arhontes/achieves:latest
+                      docker run -d -p 8080:8080 arhontes/achieves:latest
