@@ -6,5 +6,5 @@ RUN npm run build
 
 FROM nginx:stable-alpine
 COPY --from=build /app/build  /var/www/build
-EXPOSE 8080
+EXPOSE 80
 CMD [ "nginx", "-g", "daemon off;"]
